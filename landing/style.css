@@ -228,65 +228,76 @@ body:not([scrolled]) .starlink-header {
     margin-left: 20px;
 }
 
-/* ================= VISION MISSION STYLE ================= */
+/* ================= VISION & MISSION BOX STYLE ================= */
 #vision-mission {
     padding: 120px 0;
     background: #000;
     border-top: 1px solid #1a1a1a;
 }
 
-.vm-grid {
+.vm-boxes-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom standar */
+    gap: 20px;
 }
 
-.label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: #444; /* Abu-abu redup */
-    margin-bottom: 25px;
-    font-weight: 800;
-}
-
-.vision h3 {
-    font-size: 36px;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #fff;
-    letter-spacing: -1.5px;
-}
-
-.mission-list li {
+.vm-card {
+    background: #050505;
+    padding: 40px;
+    border: 1px solid #1a1a1a;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
     display: flex;
-    gap: 30px;
-    padding: 25px 0;
-    border-bottom: 1px solid #1a1a1a;
-    transition: 0.3s;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.mission-list li:hover {
+.vision-wide {
+    grid-column: span 2;
+    background: #0a0a0a;
+    border-color: #333;
+}
+
+.vm-card:hover {
     border-color: #fff;
+    background: #111;
 }
 
-.mission-list li:last-child { border-bottom: none; }
-
-.num {
-    font-size: 12px;
+.vm-card h3 {
+    font-size: 24px;
     font-weight: 800;
-    color: #444;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    margin-top: 20px;
 }
 
-.mission-list li:hover .num { color: #fff; }
-
-.mission-list p {
-    font-size: 16px;
-    color: #666;
-    transition: 0.3s;
+.vm-card p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 20px;
 }
 
-.mission-list li:hover p { color: #fff; }
+.vm-card:hover p {
+    color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .vm-boxes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .vision-wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .vm-boxes-grid {
+        grid-template-columns: 1fr;
+    }
+    .vision-wide {
+        grid-column: span 1;
+    }
+}
 
 /* ================= VALUES STYLE ================= */
 #values {
