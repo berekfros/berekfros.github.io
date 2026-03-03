@@ -5,115 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petelot Coding - Jasa Coding Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container nav-wrapper">
+
+    <header class="starlink-header">
+        <div class="header-container">
             <div class="logo">
-                <span class="square"></span>
-                <h1>PETELOT</h1> </div>
-            <div class="nav-and-btn">
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="#about">About us</a>
-                    <a href="/services">Course</a>
-                    <a href="/pricing">Pricing</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                <a href="/order" class="btn-navbar">Contact</a>
+                <h1>PETELOT</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="#website">WEBSITE</a>
+                <a href="#discord">BOT DISCORD</a>
+                <a href="#roblox">ROBLOX SCRIPT</a>
+            </nav>
+            <div class="nav-right">
+                <a href="/order" class="btn-primary">MULAI SEKARANG</a>
             </div>
         </div>
     </header>
 
-    <section id="hero-modern">
-        <div class="hero-container">
-            <div class="hero-dark-side">
-                <div class="hero-text">
-                    <h2>DOMINATE THE <br><strong>DIGITAL</strong></h2>
-                    <p>Petelot Coding membantu Anda mengotomasi bisnis melalui pembuatan website, bot Discord, dan script kustom yang cepat dan terpercaya.</p>
-                </div>
+    <main>
+        <section id="hero-starlink">
+            <div class="section-content">
+                <h2>DOMINATE THE DIGITAL</h2>
+                <p>Otomasi bisnis Anda dengan kode profesional.</p>
             </div>
-            <div class="hero-image-side">
-                <img src="images/hero.png" alt="Petelot Coding Developer">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services-spacex">
-        <div class="services-grid">
-            <div class="service-card" style="background-image: url('images/html.png');">
-                <div class="overlay">
-                    <div class="card-content">
-                        <h3>BUAT WEBSITE</h3>
-                        <p>Mulai: Rp100.000</p>
-                        <a href="#" class="btn-outline">Detail</a>
+        <section id="featured-products">
+            <div class="container-featured">
+                <h2 class="section-title">PRODUK UNGGULAN</h2>
+                
+                <div class="products-grid">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/html.png" alt="Buat Website">
+                        </div>
+                        <h4>BUAT WEBSITE</h4>
+                        <p>Nikmati layanan pembuatan website dengan performa tinggi untuk bisnis, portofolio, dan landing page kustom.</p>
                     </div>
-                </div>
-            </div>
-            <div class="service-card" style="background-image: url('images/discord.png');">
-                <div class="overlay">
-                    <div class="card-content">
-                        <h3>BOT DISCORD</h3>
-                        <p>Mulai: Rp75.000</p>
-                        <a href="#" class="btn-outline">Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-card" style="background-image: url('images/roblos.png');">
-                <div class="overlay">
-                    <div class="card-content">
-                        <h3>SCRIPT ROBLOX</h3>
-                        <p>Mulai: Rp50.000</p>
-                        <a href="#" class="btn-outline">Detail</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <footer class="modern-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="logo light">
-                    <span class="square white"></span>
-                    <h1>PETELOT</h1>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/discord.png" alt="Bot Discord">
+                        </div>
+                        <h4>BOT DISCORD</h4>
+                        <p>Otomasi server komunitas Anda dengan bot fitur lengkap, mulai dari sistem moderasi hingga integrasi API.</p>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/roblos.png" alt="Script Roblox">
+                        </div>
+                        <h4>SCRIPT ROBLOX</h4>
+                        <p>Script kustom untuk pengembangan game Anda dengan optimasi kode yang bersih dan anti-delay.</p>
+                    </div>
                 </div>
-                <p>Membantu mewujudkan ide digital Anda menjadi kenyataan dengan kode yang bersih dan efisien.</p>
+
+                <div class="slider-controls">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
             </div>
-            
+        </section>
+    </main>
+
+    <footer class="starlink-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Petelot Coding</p>
             <div class="footer-links">
-                <h4>NAVIGASI</h4>
-                <ul>
-                    <li><a href="#">Layanan Kami</a></li>
-                    <li><a href="#">Portofolio</a></li>
-                    <li><a href="#">Cara Order</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-contact">
-                <h4>KONTAK</h4>
-                <p>Email: support@petelotcoding.com</p>
-                <p>WhatsApp: +62 812-3456-7890</p>
-                <p>Alamat: Indonesia</p>
-            </div>
-
-            <div class="footer-social">
-                <h4>IKUTI KAMI</h4>
-                <div class="social-icons">
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">TW</a>
-                    <a href="#">GH</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Petelot Coding. Built with Passion.</p>
+                <a href="#">INSTAGRAM</a>
+                <a href="#">GITHUB</a>
+                <a href="#">WHATSAPP</a>
             </div>
         </div>
     </footer>
+
 </body>
+<script>
+    // 1. Logika Navbar Transparan ke Solid
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.starlink-header');
+        const scrollThreshold = 100; // Jarak scroll (px) sebelum navbar berubah sepenuhnya
+
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('header-scrolled');
+            // Menghitung opacity dinamis (0 sampai 0.9)
+            let opacity = Math.min(window.scrollY / 400, 0.9);
+            header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        } else {
+            header.classList.remove('header-scrolled');
+            header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+        }
+    });
+
+    // 2. Smooth Scroll khusus untuk browser lama atau kontrol manual (Opsional)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70, // Offset agar tidak tertutup navbar
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
 </html>
