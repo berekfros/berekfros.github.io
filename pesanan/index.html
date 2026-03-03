@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Pesanan - Petelot Coding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Petelot Coding</h1>
+        <nav>
+            <a href="/services">Layanan</a>
+            <a href="/portofolio">Portofolio</a>
+            <a href="/pesanan" class="btn-primary">Cek Pesanan</a><br>
+            <a href="/order" class="btn-primary">Pesan Sekarang</a>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="container">
+        <h2>Cek Status Pesanan</h2>
+        <p>Masukkan ID dan Passcode Anda</p>
+    </div>
+</section>
+
+<section id="dashboard">
+    <div class="container">
+        <div class="dashboard-card">
+
+            <label>ID Pesanan</label>
+            <input type="text" id="orderId" placeholder="ORD-20260108-XXXXXX">
+
+            <label>Passcode</label>
+            <input type="password" id="passcode" placeholder="8 karakter passcode">
+
+            <button class="btn-primary" id="checkBtn">Cek Pesanan</button>
+
+            <div id="orderResult" style="margin-top:20px;"></div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Petelot Coding</p>
+    </div>
+</footer>
+
+<script>
+const btn = document.getElementById("checkBtn");
+const result = document.getElementById("orderResult");
+
+btn.addEventListener("click", async () => {
+    const id = document.getElementById("orderId").value.trim();
+    const passcode = document.getElementById("passcode").value.trim();
+
+    if (!id || !passcode) {
+        result.innerHTML = `<p style="color:red;">ID dan Passcode wajib diisi</p>`;
+        return;
+    }
+
+    result.innerHTML = `<p>Memeriksa pesanan...</p>`;
+
+    try {
+        const res = await fetch("/api/check-order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: id,
+                passcode: passcode
+            })
+        });
+
+        // ? jika HTTP error (401, 403, 404, dll)
+        if (!res.ok) {
+            const text = await res.text();
+            result.innerHTML = `<p style="color:red;">${text}</p>`;
+            return;
+        }
+
+        // ? admin balikin JSON order langsung
+        const o = await res.json();
+
+        let html = `
+            <p><strong>ID Pesanan:</strong> ${o.id}</p>
+            <p><strong>Status:</strong> <span style="color:blue;">${o.status}</span></p>
+            <p><strong>Nama:</strong> ${o.name}</p>
+            <p><strong>Layanan:</strong> ${o.service}</p>
+            <br>
+            <p><strong></strong> ${o.message}</p>
+	    <br>
+        `;
+
+        if (o.status === "done" && o.filepath) {
+            html += `
+                <p>
+                    <a href="${o.filepath}" class="btn-primary" download>
+                        Unduh File Hasil
+                    </a>
+                </p>
+            `;
+        }
+
+        result.innerHTML = html;
+
+    } catch (err) {
+        console.error(err);
+        result.innerHTML = `<p style="color:red;">Gagal terhubung ke server</p>`;
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+/* ================= GENERAL SETUP ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+    background-attachment: fixed;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================= HEADER / NAVBAR (SpaceX Style Update) ================= */
+header {
+    background: #ffffff;
+    padding: 10px 0; /* Padding vertikal dikurangi agar lebih ramping */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between; /* Memisahkan logo di kiri dan nav/btn di kanan */
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo .square {
+    width: 22px;
+    height: 22px;
+    background: #000;
+}
+
+.logo .square.white {
+    background: #fff;
+}
+
+.logo h1 {
+    font-size: 18px;
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.logo.light h1 {
+    color: #fff;
+}
+
+/* Container baru untuk mengelompokkan nav dan tombol di sisi kanan */
+.nav-and-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Jarak antara menu nav dan tombol */
+}
+
+nav {
+    display: flex;
+    gap: 15px; /* Jarak antar link navigasi */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #999;
+}
+
+/* Tombol Navbar Baru (Gaya SpaceX, Tidak Rounded) */
+.btn-navbar {
+    display: inline-block;
+    background: #333; /* Warna abu-abu gelap agar match tema achromatic */
+    color: #fff;
+    padding: 8px 25px; /* Padding tombol */
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 0; /* MENJADI PERSEGI (TIDAK ROUNDED) */
+    border: 1px solid #333;
+}
+
+.btn-navbar:hover {
+    background: transparent;
+    color: #333;
+}
+
+/* ================= HERO SECTION ================= */
+#hero-modern {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    height: 600px;
+    max-height: 600px;
+    background: #fff;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+.hero-dark-side {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-text h2 strong {
+    font-weight: 800;
+    display: block;
+}
+
+.hero-text p {
+    font-size: 14px;
+    color: #888;
+    max-width: 380px;
+}
+
+/* Tombol lama dihapus dari hero sesuai contoh tata letak ke-3 */
+
+.hero-image-side {
+    flex: 1.2;
+    height: 100%;
+}
+
+.hero-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.hero-image-side img:hover {
+    filter: grayscale(0%);
+}
+
+/* ================= SPACEX SERVICES (ACHROMATIC) ================= */
+#services-spacex {
+    width: 100%;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.service-card {
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    filter: grayscale(80%);
+    transition: 0.5s ease;
+}
+
+.service-card:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+.service-card .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: flex-end;
+    padding: 50px;
+    transition: 0.4s;
+}
+
+.service-card:hover .overlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card-content h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ================= MODERN FOOTER (ABU-ABU HITAM) ================= */
+.modern-footer {
+    background: #111111;
+    padding: 80px 0 0 0;
+    border-top: 1px solid #333;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.footer-brand p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    max-width: 300px;
+}
+
+.modern-footer h4 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.modern-footer ul { list-style: none; }
+.modern-footer ul li { margin-bottom: 12px; }
+
+.modern-footer a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.modern-footer a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    font-weight: 800;
+    font-size: 12px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    background: #000;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-top: 1px solid #222;
+}
+
+/* RESPONSIVE Update untuk Navbar */
+@media (max-width: 900px) {
+    .nav-wrapper { flex-direction: column; gap: 10px; }
+    .nav-and-btn { flex-direction: column; gap: 10px; width: 100%; text-align: center; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .btn-navbar { width: 100%; max-width: 200px; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-container { height: auto; max-height: none; flex-direction: column; }
+    .hero-image-side { height: 350px; }
+}
+
+@media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand p { margin: 20px auto; }
+    .social-icons { justify-content: center; }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Jasa Coding - Petelot Coding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="container">
+            <h1>Petelot Coding</h1>
+            <nav>
+                <a href="/services">Layanan</a>
+                <a href="/portofolio">Portofolio</a>
+                <a href="/pesanan" class="btn-primary">Cek Pesanan</a>
+                <br>
+                <a href="/order" class="btn-primary">Pesan Sekarang</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container">
+            <h2>Form Pemesanan Jasa Coding</h2>
+            <p>Isi form berikut untuk memesan layanan coding sesuai kebutuhan Anda.</p>
+        </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section id="order-form">
+        <div class="container">
+            <form id="formOrder">
+                <label for="name">Nama Anda</label>
+                <input type="text" id="name" name="name" placeholder="Nama lengkap" required>
+
+                <label for="contact">WA / Email</label>
+                <input type="text" id="contact" name="contact" placeholder="0812345678 atau email@example.com" required>
+
+                <label for="service">Layanan yang Dipilih</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Pilih Layanan --</option>
+                    <option value="Website Sederhana">Website Sederhana - Rp100.000</option>
+                    <option value="Bot Discord">Bot Discord - Rp75.000</option>
+                    <option value="Script Roblox">Script Roblox - Rp50.000</option>
+                </select>
+
+                <label for="message">Detail / Catatan</label>
+                <textarea id="message" name="message" placeholder="Contoh: Saya ingin website portfolio pribadi" required></textarea>
+
+                <button type="submit" class="btn-primary">Kirim Pesanan</button>
+            </form>
+
+            <!-- Konfirmasi Sukses -->
+            <div id="successMsg" style="display:none; text-align:center; margin-top:20px; color:green;">
+                Pesanan Anda berhasil dikirim! Terima kasih.
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Petelot Coding. Semua hak dilindungi.</p>
+            <p>Media Sosial: 
+                <a href="#">Instagram</a> | 
+                <a href="#">Twitter</a> | 
+                <a href="#">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+const form = document.getElementById('formOrder');
+const successMsg = document.getElementById('successMsg');
+
+form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const orderData = {
+        name: form.name.value,
+        contact: form.contact.value,
+        service: form.service.value,
+        message: form.message.value
+    };
+
+    try {
+        const res = await fetch('/api/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        });
+
+        const data = await res.json();
+
+        // tampilkan pesan sukses
+        successMsg.innerHTML = `
+            <h3>SIMPAN BAIK-BAIK PASSCODE DAN ID ORDER INI</h3>
+            <p><strong>ID ORDER:</strong><br>${data.id}</p>
+            <p><strong>PASSCODE:</strong><br>${data.passcode}</p>
+	    <br>
+	    <h3>Pihak order akan dihubungi worker untuk membahas project, mengukur Ketingkatan Case</h3>
+	    <h3>dan proses pembayaran dapat di lakukan </h3>
+        `;
+
+        form.style.display = "none";
+        successMsg.style.display = "block";
+
+    } catch (err) {
+        alert("Gagal mengirim pesanan, coba lagi.");
+    }
+});
+</script>
+</body>
+</html>
+
