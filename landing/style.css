@@ -18,6 +18,12 @@ body {
     overflow-x: hidden;
 }
 
+.container-full {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 /* ================= HEADER ================= */
 .starlink-header {
     position: fixed; /* Navigasi ngikut terus */
