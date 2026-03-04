@@ -49,8 +49,8 @@
                     </div>
                     <div class="portfolio-right">
                         <div class="portfolio-text">
-                            <h3>DISCORD MULTI-PURPOSE BOT</h3>
-                            <p>Sistem automasi server dengan fitur moderasi canggih, integrasi API eksternal, dan dashboard manajemen yang intuitif.</p>
+                            <h3>DISCORD KEY GENERATOR & KEY WHITELISTER BOT</h3>
+                            <p>Sistem automasi Keygen dengan menggunakan bot Discord, integrasi API eksternal.</p>
                         </div>
                         <div class="video-preview">
                             <iframe src="https://www.youtube.com/embed/Wux6Je1TuL4?autoplay=1&mute=1&loop=1&playlist=Wux6Je1TuL4&controls=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -76,6 +76,10 @@
                             <iframe src="https://www.youtube.com/embed/cP1IvGM7WLE?autoplay=1&mute=1&loop=1&playlist=cP1IvGM7WLE&controls=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
+                </div>
+                <div id="imageModal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="imgZoom">
                 </div>
             </div>
         </section>
@@ -106,11 +110,28 @@
     </footer>
 
     <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("imgZoom");
+        const closeModal = document.querySelector(".close-modal");
+        // Mencari semua gambar di dalam class img-stack (total ada 2 foto per card)
+        document.querySelectorAll('.img-stack img').forEach(foto => {
+        foto.addEventListener('click', function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            document.body.style.overflow = "hidden"; // Stop scroll halaman saat zoom
+            });
+        });
+
+        // Tutup modal saat tombol 'x' atau area hitam diklik
+        modal.onclick = function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        };
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.starlink-header');
             if (window.scrollY > 100) {
-                header.style.backgroundColor = `rgba(0, 0, 0, 0.9)`;
+                header.style.backgroundColor = `rgba(0, 0, 0, 1)`;
             } else {
                 header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
             }
