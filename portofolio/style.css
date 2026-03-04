@@ -63,7 +63,7 @@ body:not([scrolled]) .starlink-header {
 #hero-starlink {
     height: 100vh; display: flex; justify-content: center;
     align-items: center; text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero2.jpeg') center/cover;
 }
 .section-content h2 { font-size: 50px; font-weight: 800; }
 
