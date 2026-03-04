@@ -1,21 +1,95 @@
-/* ================= PORTFOLIO PAGE STYLES ================= */
-.portfolio-main {
-    padding-top: 100px;
+/* ================= GLOBAL SETUP ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0 !important; /* Wajib Kotak */
+}
+
+body {
     background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container-full {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ================= STARLINK NAVBAR (FIXED) ================= */
+.starlink-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9); /* Solid di portofolio agar teks terbaca */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1a1a1a;
+    transition: all 0.4s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 0 20px;
+    letter-spacing: 2px;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 11px;
+}
+
+/* ================= PORTOFOLIO CONTENT ================= */
+.portfolio-main {
+    padding-top: 150px; /* Jarak agar tidak tertutup navbar */
 }
 
 #hero-mini {
-    padding: 80px 0;
-    text-align: left;
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .hero-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: #666;
     max-width: 600px;
-    margin-top: -20px;
 }
 
+/* Item Portofolio: Info Kiri, Media Kanan */
 .portfolio-section {
     padding: 100px 0;
     border-top: 1px solid #1a1a1a;
@@ -23,37 +97,38 @@
 
 .portfolio-item {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Info kiri, Media kanan */
+    grid-template-columns: 1fr 1.5fr;
     gap: 80px;
     align-items: start;
 }
 
-/* Info Samping Kiri */
 .portfolio-info h3 {
     font-size: 32px;
     font-weight: 800;
     letter-spacing: -1px;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 .portfolio-info p {
-    color: #888;
     font-size: 15px;
-    line-height: 1.8;
+    color: #888;
     margin-bottom: 30px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
 }
 
 .tech-stack span {
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 2px;
     border: 1px solid #333;
-    padding: 5px 12px;
-    margin-right: 10px;
-    color: #555;
+    padding: 5px 15px;
+    letter-spacing: 1px;
 }
 
-/* Media Box Kanan (Foto Atas, Video Bawah) */
+/* Media Styling */
 .portfolio-media {
     display: flex;
     flex-direction: column;
@@ -61,50 +136,75 @@
 }
 
 .media-box {
-    width: 100%;
-    background: #050505;
     border: 1px solid #1a1a1a;
-    overflow: hidden;
+    background: #050505;
+    transition: 0.4s ease;
 }
 
-.img-box {
-    height: 350px;
-}
-
-.img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
-}
-
-.video-box {
-    aspect-ratio: 16 / 9;
-}
-
-.video-box iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Hover Effects */
 .media-box:hover {
     border-color: #fff;
 }
 
-.img-box:hover img {
-    transform: scale(1.05);
+.img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Responsive */
+.video-box {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ================= FOOTER ================= */
+.starlink-footer {
+    padding: 60px 0;
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-size: 10px;
+    color: #444;
+    font-weight: 700;
+}
+
+.footer-links a {
+    color: #444;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 968px) {
+    .main-nav { display: none; }
     .portfolio-item {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
-    .img-box {
-        height: 250px;
+    .portfolio-info h3 { font-size: 26px; }
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
     }
 }
