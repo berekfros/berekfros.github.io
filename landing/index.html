@@ -18,7 +18,7 @@
           <a href="/portofolio">PORTOFOLIO</a>
           <a href="/order">ORDER</a>
           <a href="/products">PRODUCTS</a>
-           <a href="/login">LOGIN</a>
+          <a href="/login" id="nav-auth">LOGIN</a>
         </nav>
         <div class="nav-right">
           <a href="/order" class="btn-primary">MULAI SEKARANG</a>
@@ -207,6 +207,21 @@
         header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
       }
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const authLink = document.getElementById("nav-auth");
+      // Asumsikan kamu menyimpan nama user di localStorage saat login berhasil
+      const userName = localStorage.getItem("username"); 
+      if (userName) {
+          // Ganti teks "LOGIN" jadi nama user dan link-nya ke profil/dashboard
+          authLink.innerText = userName.toUpperCase();
+          authLink.href = "/dashboard";
+        
+          // Opsional: Tambahkan style khusus agar terlihat seperti user aktif
+          authLink.style.color = "#fff"; 
+          }
+    });
+    
     // 2. Smooth Scroll khusus untuk browser lama atau kontrol manual (Opsional)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
