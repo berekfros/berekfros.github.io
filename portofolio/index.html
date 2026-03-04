@@ -3,84 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Petelot Coding</title>
+    <title>Petelot Coding - Jasa Coding Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="starlink-header">
         <div class="header-container">
             <div class="logo">
                 <h1>PETELOT</h1>
             </div>
-            
             <nav class="main-nav">
-                <a href="index.html">HOME</a>
-                <a href="#website">WEBSITE</a>
-                <a href="#discord">DISCORD BOT</a>
-                <a href="#roblox">ROBLOX SCRIPT</a>
+                <a href="#hero-starlink">HOME</a>
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#vision-mission">VISION</a>
+                <a href="#featured-products">SERVICES</a>
             </nav>
-
             <div class="nav-right">
-                <a href="/order" class="btn-primary">MULAI SEKARANG</a>
-                <button class="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+                <a href="#" class="btn-primary">MULAI SEKARANG</a>
             </div>
         </div>
     </header>
 
-    <main class="portfolio-main">
-        <section id="website" class="portfolio-section">
-            <div class="container-full portfolio-item">
-                <div class="portfolio-info">
-                    </div>
+    <main>
+        <section id="hero-starlink">
+            <div class="section-content">
+                <h2>DOMINATE THE DIGITAL</h2>
+                <p>Otomasi bisnis Anda dengan kode profesional.</p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container-full">
+                <h2 class="section-title">PORTFOLIO PROJECTS</h2>
                 
-                <div class="portfolio-media">
-                    <div class="media-box img-box zoomable-image">
-                        <img src="images/html.png" alt="Website Preview">
-                        <div class="zoom-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <div class="portfolio-card">
+                    <div class="portfolio-left">
+                        <div class="img-stack">
+                            <img src="images/discord-ss1.jpg" alt="Discord Bot UI 1">
+                        </div>
+                        <div class="img-stack">
+                            <img src="images/discord-ss2.jpg" alt="Discord Bot UI 2">
                         </div>
                     </div>
-                    
-                    <div class="media-box video-box">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                    <div class="portfolio-right">
+                        <div class="portfolio-text">
+                            <h3>DISCORD MULTI-PURPOSE BOT</h3>
+                            <p>Sistem automasi server dengan fitur moderasi canggih, integrasi API eksternal, dan dashboard manajemen yang intuitif.</p>
+                        </div>
+                        <div class="video-preview">
+                            <iframe src="https://www.youtube.com/embed/Wux6Je1TuL4?autoplay=1&mute=1&loop=1&playlist=Wux6Je1TuL4&controls=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-left">
+                        <div class="img-stack">
+                            <img src="images/roblox-ss1.jpg" alt="Roblox Scripting 1">
+                        </div>
+                        <div class="img-stack">
+                            <img src="images/roblox-ss2.jpg" alt="Roblox Scripting 2">
+                        </div>
+                    </div>
+                    <div class="portfolio-right">
+                        <div class="portfolio-text">
+                            <h3>ADVANCED ROBLOX GAME SCRIPT</h3>
+                            <p>Optimasi kodingan Lua untuk sistem ekonomi in-game dan anti-cheat yang ringan serta efisien.</p>
+                        </div>
+                        <div class="video-preview">
+                            <iframe src="https://www.youtube.com/embed/cP1IvGM7WLE?autoplay=1&mute=1&loop=1&playlist=cP1IvGM7WLE&controls=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        </main>
+
+        <section id="vision-mission">
+            <div class="container-full">
+                <h2 class="section-title">VISION & MISSION</h2>
+                <div class="vm-boxes-grid">
+                    <div class="vm-card vision-wide">
+                        <h3>Menjadi penyedia solusi website pilihan utama di era digital.</h3>
+                    </div>
+                    <div class="vm-card"><p>Membangun website cepat, aman, dan mudah dikelola.</p></div>
+                    <div class="vm-card"><p>Layanan coding presisi sesuai kebutuhan klien.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="starlink-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Petelot Coding</p>
+            <div class="footer-links">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">GITHUB</a>
+                <a href="#">WHATSAPP</a>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // 1. Logika Zoom Foto saat Diklik
-        const zoomableImages = document.querySelectorAll('.zoomable-image');
-
-        zoomableImages.forEach(imageWrapper => {
-            imageWrapper.addEventListener('click', function() {
-                // Toggle class 'zoomed' pada container gambar
-                this.classList.toggle('zoomed');
-                
-                // Toggle icon zoom in/out
-                const icon = this.querySelector('.zoom-overlay i');
-                if (this.classList.contains('zoomed')) {
-                    icon.classList.remove('fa-magnifying-glass-plus');
-                    icon.classList.add('fa-magnifying-glass-minus');
-                } else {
-                    icon.classList.remove('fa-magnifying-glass-minus');
-                    icon.classList.add('fa-magnifying-glass-plus');
-                }
-            });
-        });
-
-        // 2. Logika Navbar Solid saat Scroll (Opsional jika ingin transparan di atas)
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.starlink-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = `rgba(0, 0, 0, 0.9)`;
             } else {
-                header.classList.remove('scrolled');
+                header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
             }
         });
     </script>
