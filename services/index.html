@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Petelot Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <header class="starlink-header">
+      <div class="header-container">
+        <div class="logo">
+          <h1>PETELOT</h1>
+        </div>
+        <nav class="main-nav">
+          <a href="/portofolio">PORTOFOLIO</a>
+          <a href="/order">ORDER</a>
+          <a href="/products">PRODUCTS</a>
+          <a href="/auth" id="nav-auth">LOGIN</a>
+        </nav>
+        <div class="nav-right">
+          <a href="/order" class="btn-primary">MULAI SEKARANG</a>
+        </div>
+      </div>
+    </header>
+
+    <main style="padding-top: 120px; min-height: 80vh;">
+      <section class="products-page-section">
+        <div class="container-full">
+          <h2 class="section-title">ALL PRODUCTS & SERVICES</h2>
+          
+          <div class="products-grid-detailed">
+            
+            <div class="product-card-pro">
+              <div class="pro-img-box">
+                <img src="images/html.png" alt="Custom Website">
+              </div>
+              <div class="pro-details">
+                <span class="pro-tag">WEB DEVELOPMENT</span>
+                <h3 class="pro-title">CUSTOM WEBSITE</h3>
+                <p class="pro-desc">Pembuatan website responsif dengan performa tinggi. Cocok untuk landing page, company profile, maupun sistem internal yang scalable.</p>
+                <div class="pro-footer">
+                  <span class="pro-price">Mulai Rp 1.5M</span>
+                  <a href="/order?item=website" class="btn-outline">ORDER NOW</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-pro">
+              <div class="pro-img-box">
+                <img src="images/discord.png" alt="Bot Discord">
+              </div>
+              <div class="pro-details">
+                <span class="pro-tag">AUTOMATION</span>
+                <h3 class="pro-title">DISCORD BOT PRO</h3>
+                <p class="pro-desc">Bot Discord custom dengan fitur lengkap. Mulai dari sistem moderasi otomatis, sistem tiket, ekonomi, hingga integrasi API pihak ketiga.</p>
+                <div class="pro-footer">
+                  <span class="pro-price">Mulai Rp 500k</span>
+                  <a href="/order?item=discord" class="btn-outline">ORDER NOW</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-pro">
+              <div class="pro-img-box">
+                <img src="images/roblos.png" alt="Roblox Script">
+              </div>
+              <div class="pro-details">
+                <span class="pro-tag">GAME DEV</span>
+                <h3 class="pro-title">ROBLOX LUA SCRIPT</h3>
+                <p class="pro-desc">Scripting Lua untuk mekanik game Roblox Anda. Penulisan kode bersih, teroptimasi, dan dirancang khusus untuk meminimalisir lag/delay.</p>
+                <div class="pro-footer">
+                  <span class="pro-price">Mulai Rp 300k</span>
+                  <a href="/order?item=roblox" class="btn-outline">ORDER NOW</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="starlink-footer">
+      <div class="footer-container">
+        <p>&copy; 2026 Petelot Coding</p>
+        <div class="footer-links">
+          <a href="#">INSTAGRAM</a>
+          <a href="#">GITHUB</a>
+          <a href="#">WHATSAPP</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+  <script>
+    // 1. Logika Navbar Transparan ke Solid
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.starlink-header');
+      const scrollThreshold = 100; // Jarak scroll (px) sebelum navbar berubah sepenuhnya
+      if (window.scrollY > scrollThreshold) {
+        header.classList.add('header-scrolled');
+        // Menghitung opacity dinamis (0 sampai 1)
+        let opacity = Math.min(window.scrollY / 400, 1);
+        header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+      } else {
+        header.classList.remove('header-scrolled');
+        header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+      }
+    });
+
+    // 2. Logika Cek Login
+    document.addEventListener("DOMContentLoaded", function() {
+      const authLink = document.getElementById("nav-auth");
+      // Asumsikan kamu menyimpan nama user di localStorage saat login berhasil
+      const userName = localStorage.getItem("username"); 
+      if (userName) {
+          // Ganti teks "LOGIN" jadi nama user dan link-nya ke profil/dashboard
+          authLink.innerText = userName.toUpperCase();
+          authLink.href = "/dashboard";
+        
+          // Opsional: Tambahkan style khusus agar terlihat seperti user aktif
+          authLink.style.color = "#fff"; 
+          }
+    });
+    
+    // 3. Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70, // Offset agar tidak tertutup navbar
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</html>

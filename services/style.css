@@ -1,0 +1,487 @@
+/* ================= GENERAL SETUP ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0 !important; /* Menghilangkan semua sudut bulat */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container-full {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+.starlink-header {
+    position: fixed; /* Navigasi ngikut terus */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0; /* Padding lebih kecil sedikit agar elegan saat scroll */
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0); /* Awalnya transparansi 0 */
+    transition: background 0.3s ease, padding 0.3s ease; /* Transisi halus */
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body:not([scrolled]) .starlink-header {
+    padding: 30px 0;
+}
+
+.logo h1 {
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 11px;
+    border: none;
+}
+
+/* ================= HERO ================= */
+#hero-starlink {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("images/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.section-content h2 {
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+/* ================= PRODUK UNGGULAN (LANDING PAGE) ================= */
+#featured-products {
+    padding: 60px 0 100px 0;
+    background: #000;
+}
+
+.container-featured {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    background: #111;
+    margin-bottom: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-item p {
+    font-size: 13px;
+    color: #999;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* ================= SLIDER CONTROLS ================= */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 250px;
+    height: 3px;
+    background: #333;
+    position: relative;
+}
+
+.progress-fill {
+    width: 60%;
+    height: 100%;
+    background: #fff;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #333;
+    border-radius: 50% !important; /* Pengecualian agar titik tetap bulat */
+}
+
+.dot.active {
+    background: #fff;
+}
+
+/* ================= TESTIMONIALS ================= */
+#testimonials {
+    padding: 120px 0;
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+}
+
+.testimonial-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px; 
+}
+
+.testimonial-card {
+    padding: 40px;
+    border-left: 2px solid #fff;
+    background: #050505;
+}
+
+.quote-icon { font-size: 20px; color: #333; margin-bottom: 20px; }
+.testi-text { font-size: 22px; font-weight: 300; margin-bottom: 30px; font-style: italic; }
+.author-name { font-size: 12px; font-weight: 800; letter-spacing: 2px; display: block; }
+.author-role { font-size: 10px; color: #555; }
+
+/* ================= VISION & MISSION ================= */
+#vision-mission {
+    padding: 120px 0;
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+}
+
+.vm-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.vm-card {
+    background: #050505;
+    padding: 40px;
+    border: 1px solid #1a1a1a;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vision-wide {
+    grid-column: span 2;
+    background: #0a0a0a;
+    border-color: #333;
+}
+
+.vm-card:hover {
+    border-color: #fff;
+    background: #111;
+}
+
+.vm-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    margin-top: 20px;
+}
+
+.vm-card p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.vm-card:hover p {
+    color: #fff;
+}
+
+/* ================= VALUES ================= */
+#values {
+    padding: 0 0 120px 0;
+    background: #000;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    background: #050505;
+    padding: 40px 30px;
+    border: 1px solid #1a1a1a;
+    transition: all 0.4s ease;
+}
+
+.value-card:hover {
+    border-color: #fff;
+    background: #0a0a0a;
+}
+
+.value-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.value-card h4 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 12px;
+    color: #555;
+}
+
+.value-card:hover p { color: #bbb; }
+
+/* ================= FOOTER ================= */
+.starlink-footer {
+    padding: 30px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #fff;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* ================= ALL PRODUCTS PAGE (HALAMAN PRODUK) ================= */
+.products-page-section {
+    padding: 20px 0 100px 0;
+}
+
+.products-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card-pro {
+    background: #050505;
+    border: 1px solid #1a1a1a;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-pro:hover {
+    border-color: #fff;
+    background: #0a0a0a;
+    transform: translateY(-5px);
+}
+
+.pro-img-box {
+    height: 250px;
+    background: #111;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.pro-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pro-details {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pro-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.pro-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.pro-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.pro-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
+}
+
+.pro-price {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 968px) {
+    /* Header */
+    .main-nav { display: none; }
+    .header-container { padding: 0 20px; }
+
+    /* Hero */
+    .section-content h2 { font-size: 32px; }
+
+    /* Visi Misi */
+    .vm-boxes-grid { grid-template-columns: 1fr; }
+    .vision-wide { grid-column: span 1; }
+
+    /* Values */
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Halaman Produk Detailed */
+    .products-grid-detailed { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    /* Produk Unggulan (Landing) */
+    .products-grid { grid-template-columns: 1fr; }
+
+    /* Halaman Produk Detailed */
+    .products-grid-detailed { grid-template-columns: 1fr; }
+
+    /* Testimoni */
+    .testimonial-grid { grid-template-columns: 1fr; }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Values */
+    .values-grid { grid-template-columns: 1fr; }
+
+    /* Padding Sections */
+    #vision-mission, #values, #featured-products, #testimonials, .products-page-section {
+        padding: 60px 0;
+    }
+
+    .vm-card, .value-card, .testimonial-card, .pro-details {
+        padding: 30px 20px;
+    }
+
+    /* Slider */
+    .progress-bar { width: 150px; }
+}
