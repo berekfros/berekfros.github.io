@@ -259,6 +259,16 @@ body:not([scrolled]) .starlink-header {
     .main-nav {
         display: none;
     }
+     /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 600px) {
