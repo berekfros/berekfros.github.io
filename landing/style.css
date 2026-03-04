@@ -281,24 +281,6 @@ body:not([scrolled]) .starlink-header {
     color: #fff;
 }
 
-@media (max-width: 1100px) {
-    .vm-boxes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .vision-wide {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .vm-boxes-grid {
-        grid-template-columns: 1fr;
-    }
-    .vision-wide {
-        grid-column: span 1;
-    }
-}
-
 /* ================= VALUES STYLE ================= */
 #values {
     padding: 0 0 120px 0; /* Padding bawah saja karena atas sudah ada di VM */
@@ -343,12 +325,80 @@ body:not([scrolled]) .starlink-header {
 
 .value-card:hover p { color: #bbb; }
 
+
+/* ================= MOBILE RESPONSIVE ================= */
+
 @media (max-width: 968px) {
-    .vm-grid { grid-template-columns: 1fr; gap: 60px; }
-    .values-grid { grid-template-columns: 1fr 1fr; }
+    /* Header: Sembunyikan Navigasi Tengah di HP */
+    .main-nav { 
+        display: none; 
+    }
+
+    .header-container {
+        padding: 0 20px;
+    }
+
+    /* Hero: Perkecil Ukuran Font */
+    .section-content h2 { 
+        font-size: 32px; 
+    }
+
+    /* Visi Misi: Paksa jadi 1 kolom */
+    .vm-boxes-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    .vision-wide { 
+        grid-column: span 1; 
+    }
+
+    /* Values: Jadi 2 kolom di Tablet */
+    .values-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }
 
-@media (max-width: 900px) {
-    .products-grid { grid-template-columns: 1fr; }
-    .main-nav { display: none; }
+@media (max-width: 768px) {
+    /* Produk Unggulan: Jadi 1 kolom */
+    .products-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    /* Testimoni: Jadi 1 kolom */
+    .testimonial-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    /* Footer: Teks jadi rata tengah */
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Values: Jadi 1 kolom di HP kecil */
+    .values-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    /* Padding Section diperkecil agar tidak terlalu kosong */
+    #vision-mission, #values, #featured-products, #testimonials {
+        padding: 60px 0;
+    }
+
+    .vm-card, .value-card, .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    /* Progress bar di slider diperkecil */
+    .progress-bar {
+        width: 150px;
+    }
 }
