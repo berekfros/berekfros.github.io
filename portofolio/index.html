@@ -5,131 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Petelot Coding</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="container nav-wrapper">
+    <header class="starlink-header header-scrolled">
+        <div class="header-container">
             <div class="logo">
-                <span class="square"></span>
                 <h1>PETELOT</h1>
             </div>
-            <div class="nav-and-btn">
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="/services">Layanan</a>
-                    <a href="/portofolio">Portofolio</a>
-                    <a href="/pricing">Pricing</a>
-                </nav>
-                <a href="/order" class="btn-navbar">Pesan</a>
+            <nav class="main-nav">
+                <a href="index.html">HOME</a>
+                <a href="#website">WEBSITE</a>
+                <a href="#discord">DISCORD</a>
+                <a href="#roblox">ROBLOX</a>
+            </nav>
+            <div class="nav-right">
+                <a href="/order" class="btn-primary">GET STARTED</a>
             </div>
         </div>
     </header>
 
-    <section id="hero-mini">
-        <div class="container">
-            <h2>OUR <strong>WORKS</strong></h2>
-            <p>Eksplorasi proyek pengembangan software dan kreatifitas digital kami.</p>
-        </div>
-    </section>
+    <main class="portfolio-main">
+        <section id="hero-mini">
+            <div class="container-full">
+                <h2 class="section-title">SELECTED WORKS</h2>
+                <p class="hero-subtitle">Eksplorasi proyek pengembangan software dan kreatifitas digital kami.</p>
+            </div>
+        </section>
 
-    <section id="portfolio-dark">
-        <div class="container">
-
-            <div class="portfolio-group">
-                <h2 class="category-title">01. WEB DEVELOPMENT</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-                        </div>
-                        <div class="card-info">
-                            <h3>Modern Landing Page</h3>
-                            <p>Desain responsif fokus pada UX/UI minimalis.</p>
-                        </div>
+        <section id="website" class="portfolio-section">
+            <div class="container-full portfolio-item">
+                <div class="portfolio-info">
+                    <span class="value-num">01. WEB DEVELOPMENT</span>
+                    <h3>Modern Landing Page</h3>
+                    <p>Desain responsif fokus pada UX/UI minimalis. Kami membangun ekosistem web yang cepat, aman, dan dioptimalkan untuk konversi tinggi bagi bisnis Anda.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span><span>CSS</span><span>JS</span>
                     </div>
-                    <div class="portfolio-card">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-                        </div>
-                        <div class="card-info">
-                            <h3>E-Commerce System</h3>
-                            <p>Sistem toko online dengan alur checkout terintegrasi.</p>
-                        </div>
+                </div>
+                <div class="portfolio-media">
+                    <div class="media-box img-box">
+                        <img src="images/html.png" alt="Website Preview">
+                    </div>
+                    <div class="media-box video-box">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="portfolio-group">
-                <h2 class="category-title">02. ROBLOX SCRIPTING</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/N5QrwFa6-bY" allowfullscreen></iframe>
-                        </div>
-                        <div class="card-info">
-                            <h3>Whitelist System</h3>
-                            <p>Sistem keamanan akses untuk game Roleplay Roblox.</p>
-                        </div>
+        <section id="discord" class="portfolio-section alternate">
+            <div class="container-full portfolio-item">
+                <div class="portfolio-info">
+                    <span class="value-num">02. BOT DISCORD</span>
+                    <h3>Automation System</h3>
+                    <p>Otomasi server komunitas Anda dengan bot fitur lengkap. Mulai dari sistem moderasi, ekonomi, hingga integrasi API pihak ketiga secara real-time.</p>
+                    <div class="tech-stack">
+                        <span>NODE.JS</span><span>DISCORD.JS</span><span>API</span>
                     </div>
-                    <div class="portfolio-card">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
-                        </div>
-                        <div class="card-info">
-                            <h3>Weapon AI System</h3>
-                            <p>Script sistem senjata otomatis dengan prediksi target.</p>
-                        </div>
+                </div>
+                <div class="portfolio-media">
+                    <div class="media-box img-box">
+                        <img src="images/discord.png" alt="Discord Preview">
+                    </div>
+                    <div class="media-box video-box">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <footer class="modern-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="logo light">
-                    <span class="square white"></span>
-                    <h1>PETELOT</h1>
+        <section id="roblox" class="portfolio-section">
+            <div class="container-full portfolio-item">
+                <div class="portfolio-info">
+                    <span class="value-num">03. ROBLOX SCRIPTING</span>
+                    <h3>Whitelist & AI System</h3>
+                    <p>Script kustom untuk pengembangan game Anda dengan optimasi kode yang bersih. Sistem keamanan akses dan AI senjata dengan prediksi target otomatis.</p>
+                    <div class="tech-stack">
+                        <span>LUA</span><span>ROBLOX STUDIO</span>
+                    </div>
                 </div>
-                <p>Membantu mewujudkan ide digital Anda menjadi kenyataan dengan kode yang bersih dan efisien.</p>
+                <div class="portfolio-media">
+                    <div class="media-box img-box">
+                        <img src="images/roblos.png" alt="Roblox Preview">
+                    </div>
+                    <div class="media-box video-box">
+                        <iframe src="https://www.youtube.com/embed/N5QrwFa6-bY" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            
+        </section>
+    </main>
+
+    <footer class="starlink-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Petelot Coding</p>
             <div class="footer-links">
-                <h4>NAVIGASI</h4>
-                <ul>
-                    <li><a href="#">Layanan Kami</a></li>
-                    <li><a href="#">Portofolio</a></li>
-                    <li><a href="#">Cara Order</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-contact">
-                <h4>KONTAK</h4>
-                <p>Email: support@petelotcoding.com</p>
-                <p>WhatsApp: +62 812-3456-7890</p>
-                <p>Alamat: Indonesia</p>
-            </div>
-
-            <div class="footer-social">
-                <h4>IKUTI KAMI</h4>
-                <div class="social-icons">
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">TW</a>
-                    <a href="#">GH</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Petelot Coding. Built with Passion.</p>
+                <a href="#">INSTAGRAM</a>
+                <a href="#">GITHUB</a>
+                <a href="#">WHATSAPP</a>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
