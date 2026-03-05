@@ -9,25 +9,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <header class="starlink-header" id="navbar">
         <div class="header-container">
             <div class="logo">
                 <h1>PETELOT</h1>
             </div>
             
-            <div class="hamburger" id="hamburger-menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-            <nav class="main-nav" id="main-nav">
-                <div class="close-menu" id="close-menu">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
+            <nav class="main-nav desktop-only">
                 <a href="#portofolio">PORTOFOLIO</a>
                 <a href="/order">ORDER</a>
                 <a href="#services">SERVICES</a>
-                <a href="/auth" id="nav-auth">LOGIN</a>
-                <a href="/order" class="btn-primary mobile-only">MULAI SEKARANG</a>
+                <a href="/auth" id="nav-auth-desktop">LOGIN</a>
             </nav>
 
             <div class="nav-right desktop-only">
@@ -35,6 +28,26 @@
             </div>
         </div>
     </header>
+
+    <div class="floating-hamburger" id="hamburger-btn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="mobile-sidebar" id="mobile-sidebar">
+        <div class="sidebar-header">
+            <h2>MENU</h2>
+            <div class="close-btn" id="close-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="sidebar-links">
+            <a href="#portofolio">PORTOFOLIO</a>
+            <a href="/order">ORDER</a>
+            <a href="#services">SERVICES</a>
+            <a href="/auth" id="nav-auth-mobile">LOGIN</a>
+            <a href="/order" class="btn-primary" style="text-align: center; margin-top: 20px;">MULAI SEKARANG</a>
+        </div>
+    </div>
 
     <main>
         <section id="hero-starlink">
@@ -217,25 +230,34 @@
                 header.classList.add('header-scrolled');
                 let opacity = Math.min(window.scrollY / 400, 1);
                 header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-                header.style.padding = '20px 0'; // Mengecilkan padding saat scroll
+                header.style.padding = '20px 0';
             } else {
                 header.classList.remove('header-scrolled');
                 header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
-                header.style.padding = '30px 0'; // Mengembalikan padding ke awal
+                header.style.padding = '30px 0';
             }
         });
 
-        // 2. Auth Link Update
+        // 2. Auth Link Update (Untuk Desktop & Mobile)
         document.addEventListener("DOMContentLoaded", function() {
-            const authLink = document.getElementById("nav-auth");
             const userName = localStorage.getItem("username"); 
             if (userName) {
-                authLink.innerText = userName.toUpperCase();
-                authLink.href = "/dashboard";
-                authLink.style.color = "#ffaa00"; // Ubah warna jadi kuning agar terlihat sudah login
+                const authDesktop = document.getElementById("nav-auth-desktop");
+                const authMobile = document.getElementById("nav-auth-mobile");
+                
+                if(authDesktop) {
+                    authDesktop.innerText = userName.toUpperCase();
+                    authDesktop.href = "/dashboard";
+                    authDesktop.style.color = "#ffaa00";
+                }
+                if(authMobile) {
+                    authMobile.innerText = userName.toUpperCase();
+                    authMobile.href = "/dashboard";
+                    authMobile.style.color = "#ffaa00";
+                }
             }
         });
-        
+
         // 3. Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -246,30 +268,32 @@
                         top: target.offsetTop - 70, 
                         behavior: 'smooth'
                     });
+                    // Otomatis tutup sidebar kalau link di-klik
+                    document.getElementById('mobile-sidebar').classList.remove('active');
                 }
             });
         });
 
-        // 4. Logika Hamburger Menu (Mobile Sidebar)
+        // 4. LOGIKA FLOATING HAMBURGER & LEFT SIDEBAR
         document.addEventListener("DOMContentLoaded", function() {
-            const hamburger = document.getElementById('hamburger-menu');
-            const mainNav = document.getElementById('main-nav');
-            const closeMenu = document.getElementById('close-menu');
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const closeSidebarBtn = document.getElementById('close-sidebar');
 
-            // Buka menu
-            hamburger.addEventListener('click', () => {
-                mainNav.classList.add('active');
+            // Buka sidebar saat floating button diklik
+            hamburgerBtn.addEventListener('click', () => {
+                mobileSidebar.classList.add('active');
             });
 
-            // Tutup menu dengan tombol X
-            closeMenu.addEventListener('click', () => {
-                mainNav.classList.remove('active');
+            // Tutup sidebar saat (X) diklik
+            closeSidebarBtn.addEventListener('click', () => {
+                mobileSidebar.classList.remove('active');
             });
 
-            // Tutup menu otomatis kalau klik di luar area menu
+            // Tutup sidebar jika klik area luar menu
             document.addEventListener('click', (e) => {
-                if (!mainNav.contains(e.target) && !hamburger.contains(e.target) && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
+                if (!mobileSidebar.contains(e.target) && !hamburgerBtn.contains(e.target) && mobileSidebar.classList.contains('active')) {
+                    mobileSidebar.classList.remove('active');
                 }
             });
         });
