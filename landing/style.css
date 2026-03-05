@@ -7,9 +7,7 @@
     border-radius: 0 !important;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background: #000;
@@ -24,7 +22,7 @@ body {
     margin: 0 auto;
 }
 
-/* ================= HEADER ================= */
+/* ================= DESKTOP HEADER ================= */
 .starlink-header {
     position: fixed; 
     top: 0;
@@ -45,362 +43,159 @@ body {
     align-items: center;
 }
 
-.logo h1 {
-    font-size: 18px;
-    letter-spacing: 5px;
-    font-weight: 800;
-}
+.logo h1 { font-size: 18px; letter-spacing: 5px; font-weight: 800; }
 
 .main-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    margin: 0 20px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    color: #fff; text-decoration: none; font-size: 12px; font-weight: 700;
+    margin: 0 20px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s ease;
 }
 
-.main-nav a:hover {
-    color: #ffaa00;
-}
+.main-nav a:hover { color: #ffaa00; }
 
 .btn-primary {
-    background: #fff;
-    color: #000 !important;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 11px;
-    border: none;
-    transition: background 0.3s ease;
+    background: #fff; color: #000 !important; padding: 10px 25px;
+    text-decoration: none; font-weight: 800; font-size: 11px;
+    border: none; transition: background 0.3s ease; display: inline-block;
 }
 
-.btn-primary:hover {
-    background: #ccc;
-}
+.btn-primary:hover { background: #ccc; }
 
-/* ================= HAMBURGER MENU SETUP ================= */
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-    transition: 0.3s;
-}
-.hamburger:hover { color: #ffaa00; }
-.close-menu { display: none; }
-.mobile-only { display: none; }
+/* ================= MOBILE UI (Awalnya Sembunyi) ================= */
+.floating-hamburger { display: none; }
+.mobile-sidebar { display: none; }
 
 /* ================= HERO ================= */
 #hero-starlink {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url("images/hero.jpg");
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: center; 
+    height: 100vh; display: flex; justify-content: center; align-items: center;
+    text-align: center; background-image: url("images/hero.jpg");
+    background-repeat: no-repeat; background-size: cover; background-position: center; 
 }
 
-.section-content h2 {
-    font-size: 50px;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
+.section-content h2 { font-size: 50px; font-weight: 800; letter-spacing: -1px; }
 
 /* ================= VISION & MISSION ================= */
-#vision-mission {
-    padding: 120px 0;
-    background: #000;
-    border-top: 1px solid #1a1a1a;
-}
-
-.vm-boxes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-}
-
+#vision-mission { padding: 120px 0; background: #000; border-top: 1px solid #1a1a1a; }
+.vm-boxes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .vm-card {
-    background: #050505;
-    padding: 40px;
-    border: 1px solid #1a1a1a;
-    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background: #050505; padding: 40px; border: 1px solid #1a1a1a;
+    transition: all 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;
 }
-
-.vision-wide {
-    grid-column: span 2;
-    background: #0a0a0a;
-    border-color: #333;
-}
-
-.vm-card:hover {
-    border-color: #fff;
-    background: #111;
-}
-
-.vm-card h3 {
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.3;
-    letter-spacing: -1px;
-    margin-top: 20px;
-}
-
-.vm-card p {
-    font-size: 13px;
-    color: #777;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-
-.vm-card:hover p {
-    color: #fff;
-}
+.vision-wide { grid-column: span 2; background: #0a0a0a; border-color: #333; }
+.vm-card:hover { border-color: #fff; background: #111; }
+.vm-card h3 { font-size: 24px; font-weight: 800; line-height: 1.3; letter-spacing: -1px; margin-top: 20px; }
+.vm-card p { font-size: 13px; color: #777; line-height: 1.6; margin-top: 20px; }
+.vm-card:hover p { color: #fff; }
 
 /* ================= CORE VALUES ================= */
-#values {
-    padding: 0 0 120px 0; 
-    background: #000;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.value-card {
-    background: #050505;
-    padding: 40px 30px;
-    border: 1px solid #1a1a1a;
-    transition: all 0.4s ease;
-}
-
-.value-card:hover {
-    border-color: #fff;
-    background: #0a0a0a;
-}
-
-.value-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.value-card h4 {
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.value-card p {
-    font-size: 12px;
-    color: #555;
-}
-
+#values { padding: 0 0 120px 0; background: #000; }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.value-card { background: #050505; padding: 40px 30px; border: 1px solid #1a1a1a; transition: all 0.4s ease; }
+.value-card:hover { border-color: #fff; background: #0a0a0a; }
+.value-header { display: flex; justify-content: space-between; margin-bottom: 40px; }
+.value-card h4 { font-size: 14px; letter-spacing: 2px; font-weight: 800; margin-bottom: 15px; }
+.value-card p { font-size: 12px; color: #555; }
 .value-card:hover p { color: #bbb; }
 
 /* ================= PRODUK UNGGULAN ================= */
-#featured-products {
-    padding: 60px 0 100px 0;
-    background: #000;
-}
+#featured-products { padding: 60px 0 100px 0; background: #000; }
+.container-featured { width: 90%; max-width: 1400px; margin: 0 auto; }
+.section-title { font-size: 14px; letter-spacing: 3px; margin-bottom: 40px; font-weight: 700; }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px; }
+.product-image { width: 100%; height: 300px; background: #111; margin-bottom: 20px; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; }
+.product-item h4 { font-size: 16px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+.product-item p { font-size: 13px; color: #999; font-weight: 400; line-height: 1.5; }
 
-.container-featured {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    font-weight: 700;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.product-image {
-    width: 100%;
-    height: 300px;
-    background: #111;
-    margin-bottom: 20px;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-item h4 {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.product-item p {
-    font-size: 13px;
-    color: #999;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.slider-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.progress-bar {
-    width: 250px;
-    height: 3px;
-    background: #333;
-    position: relative;
-}
-
-.progress-fill {
-    width: 60%; 
-    height: 100%;
-    background: #fff;
-}
-
-.slider-dots {
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background: #333;
-    border-radius: 50% !important; 
-}
-
-.dot.active {
-    background: #fff;
-}
+.slider-controls { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
+.progress-bar { width: 250px; height: 3px; background: #333; position: relative; }
+.progress-fill { width: 60%; height: 100%; background: #fff; }
+.slider-dots { display: flex; gap: 8px; }
+.dot { width: 6px; height: 6px; background: #333; border-radius: 50% !important; }
+.dot.active { background: #fff; }
 
 /* ================= TESTIMONIALS ================= */
-#testimonials {
-    padding: 120px 0;
-    background: #000;
-    border-top: 1px solid #1a1a1a;
-}
-
+#testimonials { padding: 120px 0; background: #000; border-top: 1px solid #1a1a1a; }
 .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-
-.testimonial-card {
-    padding: 40px;
-    border-left: 2px solid #fff;
-    background: #050505;
-}
-
+.testimonial-card { padding: 40px; border-left: 2px solid #fff; background: #050505; }
 .quote-icon { font-size: 20px; color: #333; margin-bottom: 20px; }
 .testi-text { font-size: 22px; font-weight: 300; margin-bottom: 30px; font-style: italic; }
 .author-name { font-size: 12px; font-weight: 800; letter-spacing: 2px; display: block; }
 .author-role { font-size: 10px; color: #555; }
 
 /* ================= FOOTER ================= */
-.starlink-footer {
-    padding: 30px 0;
-    border-top: 1px solid #222;
-}
-
-.footer-container {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: #fff;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-}
+.starlink-footer { padding: 30px 0; border-top: 1px solid #222; }
+.footer-container { width: 90%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 11px; color: #fff; }
+.footer-links a { color: #fff; text-decoration: none; margin-left: 20px; }
 
 
 /* ================= MOBILE RESPONSIVE ================= */
 
 @media (max-width: 968px) {
-    /* Munculkan Hamburger, Sembunyikan tombol kanan desktop */
-    .hamburger { display: block; z-index: 1001; }
-    .desktop-only { display: none; }
+    /* 1. Sembunyikan Elemen Desktop */
+    .desktop-only { display: none !important; }
 
-    /* Ubah Navigasi menjadi Sidebar Kanan */
-    .main-nav {
+    /* 2. Floating Hamburger di Kiri Bawah Navbar */
+    .floating-hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 90px; /* Jarak dari atas (di bawah navbar) */
+        left: 0; /* Nempel di kiri layar */
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        color: #000;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1500;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        /* Sedikit melengkung di sisi kanannya agar cantik */
+        border-top-right-radius: 10px !important;
+        border-bottom-right-radius: 10px !important;
+        transition: 0.3s;
+    }
+    .floating-hamburger:hover { background: #ccc; }
+
+    /* 3. Left Sidebar (Menu yang keluar dari luar kiri layar) */
+    .mobile-sidebar {
+        display: block; /* Aktifkan DOM-nya */
         position: fixed;
         top: 0;
-        right: -100%; /* Sembunyikan di luar layar kanan */
+        left: -100%; /* Sembunyikan jauh di kiri luar layar */
         width: 280px;
         height: 100vh;
         background: #050505;
-        border-left: 1px solid #1a1a1a;
+        border-right: 1px solid #1a1a1a;
+        z-index: 2000;
+        transition: left 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 80px 30px 30px 30px;
-        transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        z-index: 1000;
     }
 
-    /* Class active ditambahkan via JS saat hamburger diklik */
-    .main-nav.active {
-        right: 0; 
-        box-shadow: -5px 0 20px rgba(0,0,0,0.8);
+    /* Saat class 'active' ditambahkan lewat JS, menu meluncur ke kanan */
+    .mobile-sidebar.active {
+        left: 0;
+        box-shadow: 5px 0 25px rgba(0,0,0,0.8);
     }
 
-    .main-nav a {
-        margin: 0 0 25px 0;
-        font-size: 14px;
-        width: 100%;
-        border-bottom: 1px solid #111;
-        padding-bottom: 15px;
+    /* Isi Sidebar */
+    .sidebar-header {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 30px; border-bottom: 1px solid #1a1a1a;
     }
-
-    /* Atur tombol di dalam mobile menu */
-    .mobile-only {
-        display: inline-block;
-        margin-top: 10px;
-        text-align: center;
-        border: none !important;
-    }
-
-    /* Tombol Close (X) */
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 25px;
-        right: 30px;
-        font-size: 28px;
-        cursor: pointer;
-        color: #fff;
-    }
+    .sidebar-header h2 { font-size: 14px; letter-spacing: 3px; }
     
-    .close-menu:hover { color: #ff4444; }
+    .close-btn { font-size: 24px; cursor: pointer; color: #fff; }
+    .close-btn:hover { color: #ff4444; }
 
+    .sidebar-links { display: flex; flex-direction: column; padding: 30px; }
+    .sidebar-links a {
+        color: #fff; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 2px;
+        padding: 15px 0; border-bottom: 1px solid #111;
+    }
+
+    /* Penyesuaian layout lainnya untuk Tablet */
     .header-container { padding: 0 20px; }
     .section-content h2 { font-size: 32px; }
     .vm-boxes-grid { grid-template-columns: 1fr; }
@@ -411,427 +206,13 @@ body {
 @media (max-width: 768px) {
     .products-grid { grid-template-columns: 1fr; }
     .testimonial-grid { grid-template-columns: 1fr; }
-    .footer-container {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    .footer-links {
-        justify-content: center;
-        margin-top: 10px;
-    }
+    .footer-container { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-links { justify-content: center; margin-top: 10px; }
 }
 
 @media (max-width: 480px) {
     .values-grid { grid-template-columns: 1fr; }
-    #vision-mission, #values, #featured-products, #testimonials {
-        padding: 60px 0;
-    }
-    .vm-card, .value-card, .testimonial-card {
-        padding: 30px 20px;
-    }
+    #vision-mission, #values, #featured-products, #testimonials { padding: 60px 0; }
+    .vm-card, .value-card, .testimonial-card { padding: 30px 20px; }
     .progress-bar { width: 150px; }
-}/* ================= GENERAL SETUP ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 0 !important; /* Menghilangkan semua sudut bulat */
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #000;
-    color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container-full {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* ================= HEADER ================= */
-.starlink-header {
-    position: fixed; /* Navigasi ngikut terus */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0; /* Padding lebih kecil sedikit agar elegan saat scroll */
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0); /* Awalnya transparansi 0 */
-    transition: background 0.3s ease, padding 0.3s ease; /* Transisi halus */
-}
-
-.header-container {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-body:not([scrolled]) .starlink-header {
-    padding: 30px 0;
-}
-
-
-.logo h1 {
-    font-size: 18px;
-    letter-spacing: 5px;
-    font-weight: 800;
-}
-
-.main-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    margin: 0 20px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.btn-primary {
-    background: #fff;
-    color: #000;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 11px;
-    border: none;
-}
-
-/* ================= HERO ================= */
-#hero-starlink {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url("images/hero.jpg");
-    background-repeat: no-repeat; /* Prevents repetition */
-    background-size: cover; /* Resizes image to cover the entire container */
-    background-position: center; /* Centers the image */
-}
-
-.section-content h2 {
-    font-size: 50px;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-/* ================= PRODUK UNGGULAN (Sesuai Gambar) ================= */
-#featured-products {
-    padding: 60px 0 100px 0;
-    background: #000;
-}
-
-.container-featured {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    font-weight: 700;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.product-image {
-    width: 100%;
-    height: 300px;
-    background: #111;
-    margin-bottom: 20px;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-item h4 {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.product-item p {
-    font-size: 13px;
-    color: #999;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-/* ================= TESTIMONIALS ================= */
-#testimonials {
-    padding: 120px 0;
-    background: #000;
-    border-top: 1px solid #1a1a1a;
-}
-
-.testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-
-.testimonial-card {
-    padding: 40px;
-    border-left: 2px solid #fff;
-    background: #050505;
-}
-
-.quote-icon { font-size: 20px; color: #333; margin-bottom: 20px; }
-.testi-text { font-size: 22px; font-weight: 300; margin-bottom: 30px; font-style: italic; }
-.author-name { font-size: 12px; font-weight: 800; letter-spacing: 2px; display: block; }
-.author-role { font-size: 10px; color: #555; }
-
-/* ================= SLIDER CONTROLS ================= */
-.slider-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.progress-bar {
-    width: 250px;
-    height: 3px;
-    background: #333;
-    position: relative;
-}
-
-.progress-fill {
-    width: 60%; /* Sesuai visual gambar */
-    height: 100%;
-    background: #fff;
-}
-
-.slider-dots {
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background: #333;
-    border-radius: 50% !important; /* Pengecualian agar titik tetap bulat */
-}
-
-.dot.active {
-    background: #fff;
-}
-
-/* ================= FOOTER ================= */
-.starlink-footer {
-    padding: 30px 0;
-    border-top: 1px solid #222;
-}
-
-.footer-container {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: #fff;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-/* ================= VISION & MISSION BOX STYLE ================= */
-#vision-mission {
-    padding: 120px 0;
-    background: #000;
-    border-top: 1px solid #1a1a1a;
-}
-
-.vm-boxes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Kolom standar */
-    gap: 20px;
-}
-
-.vm-card {
-    background: #050505;
-    padding: 40px;
-    border: 1px solid #1a1a1a;
-    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.vision-wide {
-    grid-column: span 2;
-    background: #0a0a0a;
-    border-color: #333;
-}
-
-.vm-card:hover {
-    border-color: #fff;
-    background: #111;
-}
-
-.vm-card h3 {
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.3;
-    letter-spacing: -1px;
-    margin-top: 20px;
-}
-
-.vm-card p {
-    font-size: 13px;
-    color: #777;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-
-.vm-card:hover p {
-    color: #fff;
-}
-
-/* ================= VALUES STYLE ================= */
-#values {
-    padding: 0 0 120px 0; /* Padding bawah saja karena atas sudah ada di VM */
-    background: #000;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.value-card {
-    background: #050505;
-    padding: 40px 30px;
-    border: 1px solid #1a1a1a;
-    transition: all 0.4s ease;
-}
-
-.value-card:hover {
-    border-color: #fff;
-    background: #0a0a0a;
-}
-
-.value-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.value-card h4 {
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.value-card p {
-    font-size: 12px;
-    color: #555;
-}
-
-.value-card:hover p { color: #bbb; }
-
-
-/* ================= MOBILE RESPONSIVE ================= */
-
-@media (max-width: 968px) {
-    /* Header: Sembunyikan Navigasi Tengah di HP */
-    .main-nav { 
-        display: none; 
-    }
-
-    .header-container {
-        padding: 0 20px;
-    }
-
-    /* Hero: Perkecil Ukuran Font */
-    .section-content h2 { 
-        font-size: 32px; 
-    }
-
-    /* Visi Misi: Paksa jadi 1 kolom */
-    .vm-boxes-grid { 
-        grid-template-columns: 1fr; 
-    }
-
-    .vision-wide { 
-        grid-column: span 1; 
-    }
-
-    /* Values: Jadi 2 kolom di Tablet */
-    .values-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-@media (max-width: 768px) {
-    /* Produk Unggulan: Jadi 1 kolom */
-    .products-grid { 
-        grid-template-columns: 1fr; 
-    }
-
-    /* Testimoni: Jadi 1 kolom */
-    .testimonial-grid { 
-        grid-template-columns: 1fr; 
-    }
-
-    /* Footer: Teks jadi rata tengah */
-    .footer-container {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Values: Jadi 1 kolom di HP kecil */
-    .values-grid { 
-        grid-template-columns: 1fr; 
-    }
-
-    /* Padding Section diperkecil agar tidak terlalu kosong */
-    #vision-mission, #values, #featured-products, #testimonials {
-        padding: 60px 0;
-    }
-
-    .vm-card, .value-card, .testimonial-card {
-        padding: 30px 20px;
-    }
-
-    /* Progress bar di slider diperkecil */
-    .progress-bar {
-        width: 150px;
-    }
 }
