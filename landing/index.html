@@ -1,239 +1,278 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petelot Coding - Jasa Coding Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header class="starlink-header">
-      <div class="header-container">
-        <div class="logo">
-          <h1>PETELOT</h1>
-        </div>
-        <nav class="main-nav">
-          <a href="/portofolio">PORTOFOLIO</a>
-          <a href="/order">ORDER</a>
-          <a href="/services">SERVICES</a>
-          <a href="/auth" id="nav-auth">LOGIN</a>
-        </nav>
-        <div class="nav-right">
-          <a href="/order" class="btn-primary">MULAI SEKARANG</a>
-        </div>
-      </div>
-    </header>
-    <main>
-      <section id="hero-starlink">
-        <div class="section-content">
-          <h2>DOMINATE THE DIGITAL</h2>
-          <p>Otomasi bisnis Anda dengan kode profesional.</p>
-        </div>
-      </section>
-      <section id="vision-mission">
-        <div class="container-full">
-          <h2 class="section-title">VISION & MISSION</h2>
-          <div class="vm-boxes-grid">
-            <div class="vm-card vision-wide">
-              <div class="value-header">
-                <span class="value-num">THE VISION</span>
-                <i class="fa-solid fa-eye"></i>
-              </div>
-              <h3>Menjadi penyedia solusi website pilihan utama bagi individu dan bisnis yang ingin berkembang di era digital.</h3>
+</head>
+<body>
+    <header class="starlink-header" id="navbar">
+        <div class="header-container">
+            <div class="logo">
+                <h1>PETELOT</h1>
             </div>
-            <div class="vm-card">
-              <div class="value-header">
-                <span class="value-num">MISSION 01</span>
-                <i class="fa-solid fa-bolt"></i>
-              </div>
-              <p>Membangun website yang cepat, aman, dan mudah dikelola untuk efisiensi bisnis Anda.</p>
+            
+            <div class="hamburger" id="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
             </div>
-            <div class="vm-card">
-              <div class="value-header">
-                <span class="value-num">MISSION 02</span>
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <p>Memberikan layanan coding yang disesuaikan secara presisi dengan kebutuhan spesifik klien.</p>
-            </div>
-            <div class="vm-card">
-              <div class="value-header">
-                <span class="value-num">MISSION 03</span>
-                <i class="fa-solid fa-mobile-screen"></i>
-              </div>
-              <p>Mengedepankan desain responsif dan ramah pengguna (user-friendly) di semua perangkat.</p>
-            </div>
-            <div class="vm-card">
-              <div class="value-header">
-                <span class="value-num">MISSION 04</span>
-                <i class="fa-solid fa-rocket"></i>
-              </div>
-              <p>Memberikan pendampingan teknis intensif dari tahap awal hingga peluncuran website.</p>
-            </div>
-            <div class="vm-card">
-              <div class="value-header">
-                <span class="value-num">MISSION 05</span>
-                <i class="fa-solid fa-tags"></i>
-              </div>
-              <p>Menawarkan harga kompetitif tanpa mengorbankan kualitas dan integritas kode.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="values">
-        <div class="container-full">
-          <h2 class="section-title">CORE VALUES</h2>
-          <div class="values-grid">
-            <div class="value-card">
-              <div class="value-header">
-                <span class="value-num">01</span>
-                <i class="fa-solid fa-microchip"></i>
-              </div>
-              <h4>PRECISION</h4>
-              <p>Kami menulis kode dengan ketelitian tinggi untuk performa maksimal tanpa bug.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-header">
-                <span class="value-num">02</span>
-                <i class="fa-solid fa-arrow-up-right-dots"></i>
-              </div>
-              <h4>SCALABILITY</h4>
-              <p>Sistem yang dirancang untuk tumbuh bersama perkembangan bisnis Anda.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-header">
-                <span class="value-num">03</span>
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <h4>SECURITY</h4>
-              <p>Keamanan data adalah prioritas utama dalam setiap arsitektur yang kami bangun.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-header">
-                <span class="value-num">04</span>
-                <i class="fa-solid fa-handshake-angle"></i>
-              </div>
-              <h4>INTEGRITY</h4>
-              <p>Transparansi proses dan pendampingan teknis yang berkelanjutan.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="featured-products">
-        <div class="container-featured">
-          <h2 class="section-title">PRODUK UNGGULAN</h2>
-          <div class="products-grid">
-            <div class="product-item">
-              <div class="product-image">
-                <img src="images/html.png" alt="Buat Website">
-              </div>
-              <h4>BUAT WEBSITE</h4>
-              <p>Nikmati layanan pembuatan website dengan performa tinggi untuk bisnis, portofolio, dan landing page kustom.</p>
-            </div>
-            <div class="product-item">
-              <div class="product-image">
-                <img src="images/discord.png" alt="Bot Discord">
-              </div>
-              <h4>BOT DISCORD</h4>
-              <p>Otomasi server komunitas Anda dengan bot fitur lengkap, mulai dari sistem moderasi hingga integrasi API.</p>
-            </div>
-            <div class="product-item">
-              <div class="product-image">
-                <img src="images/roblos.png" alt="Script Roblox">
-              </div>
-              <h4>SCRIPT ROBLOX</h4>
-              <p>Script kustom untuk pengembangan game Anda dengan optimasi kode yang bersih dan anti-delay.</p>
-            </div>
-          </div>
-          <div class="slider-controls">
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
-            </div>
-            <div class="slider-dots">
-              <span class="dot active"></span>
-              <span class="dot"></span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="testimonials">
-        <div class="container-full">
-          <h2 class="section-title">TESTIMONI KLIEN</h2>
-          <div class="testimonial-grid">
-            <div class="testimonial-card">
-              <i class="fa-solid fa-quote-left quote-icon"></i>
-              <p class="testi-text">"Proses pembuatan bot Discord sangat cepat dan kodenya sangat rapi. Sangat direkomendasikan untuk proyek serius."</p>
-              <div class="testi-author">
-                <span class="author-name">ANDI KUSUMA</span>
-                <span class="author-role">FOUNDER COMMUNITY X</span>
-              </div>
-            </div>
-            <div class="testimonial-card">
-              <i class="fa-solid fa-quote-left quote-icon"></i>
-              <p class="testi-text">"Website landing page saya naik kelas. Desainnya sangat modern dan sesuai dengan ekspektasi bisnis kami."</p>
-              <div class="testi-author">
-                <span class="author-name">SARA WIJAYA</span>
-                <span class="author-role">DIGITAL MARKETER</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="starlink-footer">
-      <div class="footer-container">
-        <p>&copy; 2026 Petelot Coding</p>
-        <div class="footer-links">
-          <a href="#">INSTAGRAM</a>
-          <a href="#">GITHUB</a>
-          <a href="#">WHATSAPP</a>
-        </div>
-      </div>
-    </footer>
-  </body>
-  <script>
-    // 1. Logika Navbar Transparan ke Solid
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.starlink-header');
-      const scrollThreshold = 100; // Jarak scroll (px) sebelum navbar berubah sepenuhnya
-      if (window.scrollY > scrollThreshold) {
-        header.classList.add('header-scrolled');
-        // Menghitung opacity dinamis (0 sampai 0.9)
-        let opacity = Math.min(window.scrollY / 400, 1);
-        header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-      } else {
-        header.classList.remove('header-scrolled');
-        header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
-      }
-    });
 
-    document.addEventListener("DOMContentLoaded", function() {
-      const authLink = document.getElementById("nav-auth");
-      // Asumsikan kamu menyimpan nama user di localStorage saat login berhasil
-      const userName = localStorage.getItem("username"); 
-      if (userName) {
-          // Ganti teks "LOGIN" jadi nama user dan link-nya ke profil/dashboard
-          authLink.innerText = userName.toUpperCase();
-          authLink.href = "/dashboard";
+            <nav class="main-nav" id="main-nav">
+                <div class="close-menu" id="close-menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <a href="#portofolio">PORTOFOLIO</a>
+                <a href="/order">ORDER</a>
+                <a href="#services">SERVICES</a>
+                <a href="/auth" id="nav-auth">LOGIN</a>
+                <a href="/order" class="btn-primary mobile-only">MULAI SEKARANG</a>
+            </nav>
+
+            <div class="nav-right desktop-only">
+                <a href="/order" class="btn-primary">MULAI SEKARANG</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-starlink">
+            <div class="section-content">
+                <h2>DOMINATE THE DIGITAL</h2>
+                <p>Otomasi bisnis Anda dengan kode profesional.</p>
+            </div>
+        </section>
+
+        <section id="vision-mission">
+            <div class="container-full">
+                <h2 class="section-title">VISION & MISSION</h2>
+                <div class="vm-boxes-grid">
+                    <div class="vm-card vision-wide">
+                        <div class="value-header">
+                            <span class="value-num">THE VISION</span>
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3>Menjadi penyedia solusi website pilihan utama bagi individu dan bisnis yang ingin berkembang di era digital.</h3>
+                    </div>
+                    <div class="vm-card">
+                        <div class="value-header">
+                            <span class="value-num">MISSION 01</span>
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <p>Membangun website yang cepat, aman, dan mudah dikelola untuk efisiensi bisnis Anda.</p>
+                    </div>
+                    <div class="vm-card">
+                        <div class="value-header">
+                            <span class="value-num">MISSION 02</span>
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <p>Memberikan layanan coding yang disesuaikan secara presisi dengan kebutuhan spesifik klien.</p>
+                    </div>
+                    <div class="vm-card">
+                        <div class="value-header">
+                            <span class="value-num">MISSION 03</span>
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <p>Mengedepankan desain responsif dan ramah pengguna (user-friendly) di semua perangkat.</p>
+                    </div>
+                    <div class="vm-card">
+                        <div class="value-header">
+                            <span class="value-num">MISSION 04</span>
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <p>Memberikan pendampingan teknis intensif dari tahap awal hingga peluncuran website.</p>
+                    </div>
+                    <div class="vm-card">
+                        <div class="value-header">
+                            <span class="value-num">MISSION 05</span>
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <p>Menawarkan harga kompetitif tanpa mengorbankan kualitas dan integritas kode.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="values">
+            <div class="container-full">
+                <h2 class="section-title">CORE VALUES</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-header">
+                            <span class="value-num">01</span>
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h4>PRECISION</h4>
+                        <p>Kami menulis kode dengan ketelitian tinggi untuk performa maksimal tanpa bug.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-header">
+                            <span class="value-num">02</span>
+                            <i class="fa-solid fa-arrow-up-right-dots"></i>
+                        </div>
+                        <h4>SCALABILITY</h4>
+                        <p>Sistem yang dirancang untuk tumbuh bersama perkembangan bisnis Anda.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-header">
+                            <span class="value-num">03</span>
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h4>SECURITY</h4>
+                        <p>Keamanan data adalah prioritas utama dalam setiap arsitektur yang kami bangun.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-header">
+                            <span class="value-num">04</span>
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h4>INTEGRITY</h4>
+                        <p>Transparansi proses dan pendampingan teknis yang berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-products">
+            <div class="container-featured">
+                <h2 class="section-title">PRODUK UNGGULAN</h2>
+                <div class="products-grid">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/html.png" alt="Buat Website">
+                        </div>
+                        <h4>BUAT WEBSITE</h4>
+                        <p>Nikmati layanan pembuatan website dengan performa tinggi untuk bisnis, portofolio, dan landing page kustom.</p>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/discord.png" alt="Bot Discord">
+                        </div>
+                        <h4>BOT DISCORD</h4>
+                        <p>Otomasi server komunitas Anda dengan bot fitur lengkap, mulai dari sistem moderasi hingga integrasi API.</p>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/roblos.png" alt="Script Roblox">
+                        </div>
+                        <h4>SCRIPT ROBLOX</h4>
+                        <p>Script kustom untuk pengembangan game Anda dengan optimasi kode yang bersih dan anti-delay.</p>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container-full">
+                <h2 class="section-title">TESTIMONI KLIEN</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="testi-text">"Proses pembuatan bot Discord sangat cepat dan kodenya sangat rapi. Sangat direkomendasikan untuk proyek serius."</p>
+                        <div class="testi-author">
+                            <span class="author-name">ANDI KUSUMA</span>
+                            <span class="author-role">FOUNDER COMMUNITY X</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="testi-text">"Website landing page saya naik kelas. Desainnya sangat modern dan sesuai dengan ekspektasi bisnis kami."</p>
+                        <div class="testi-author">
+                            <span class="author-name">SARA WIJAYA</span>
+                            <span class="author-role">DIGITAL MARKETER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="starlink-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Petelot Coding</p>
+            <div class="footer-links">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">GITHUB</a>
+                <a href="#">WHATSAPP</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Logika Navbar Transparan ke Solid
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.starlink-header');
+            const scrollThreshold = 100; 
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('header-scrolled');
+                let opacity = Math.min(window.scrollY / 400, 1);
+                header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+                header.style.padding = '20px 0'; // Mengecilkan padding saat scroll
+            } else {
+                header.classList.remove('header-scrolled');
+                header.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+                header.style.padding = '30px 0'; // Mengembalikan padding ke awal
+            }
+        });
+
+        // 2. Auth Link Update
+        document.addEventListener("DOMContentLoaded", function() {
+            const authLink = document.getElementById("nav-auth");
+            const userName = localStorage.getItem("username"); 
+            if (userName) {
+                authLink.innerText = userName.toUpperCase();
+                authLink.href = "/dashboard";
+                authLink.style.color = "#ffaa00"; // Ubah warna jadi kuning agar terlihat sudah login
+            }
+        });
         
-          // Opsional: Tambahkan style khusus agar terlihat seperti user aktif
-          authLink.style.color = "#fff"; 
-          }
-    });
-    
-    // 2. Smooth Scroll khusus untuk browser lama atau kontrol manual (Opsional)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 70, // Offset agar tidak tertutup navbar
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
+        // 3. Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 4. Logika Hamburger Menu (Mobile Sidebar)
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById('hamburger-menu');
+            const mainNav = document.getElementById('main-nav');
+            const closeMenu = document.getElementById('close-menu');
+
+            // Buka menu
+            hamburger.addEventListener('click', () => {
+                mainNav.classList.add('active');
+            });
+
+            // Tutup menu dengan tombol X
+            closeMenu.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+
+            // Tutup menu otomatis kalau klik di luar area menu
+            document.addEventListener('click', (e) => {
+                if (!mainNav.contains(e.target) && !hamburger.contains(e.target) && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
