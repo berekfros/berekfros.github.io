@@ -1,0 +1,75 @@
+/* ================= GLOBAL ================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; border-radius: 0 !important; }
+body { background: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
+
+/* ================= LAYOUT ================= */
+.dashboard-wrapper { padding: 50px 0; min-height: 100vh; display: flex; justify-content: center; }
+.container-center { display: flex; width: 95%; max-width: 1400px; gap: 35px; }
+
+/* ================= SIDEBAR ================= */
+.sidebar-center { width: 250px; background: #050505; border: 1px solid #1a1a1a; padding: 40px 20px; position: sticky; top: 50px; height: fit-content; }
+.sidebar-logo h1 { font-size: 16px; letter-spacing: 5px; font-weight: 800; margin-bottom: 40px; text-align: center; border-bottom: 1px solid #1a1a1a; padding-bottom: 20px; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 12px; }
+.nav-item { color: #444; text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 15px 20px; transition: 0.3s; border: 1px solid transparent; display: flex; align-items: center; gap: 15px; }
+.nav-item.active { color: #fff; background: rgba(255,255,255,0.05); border: 1px solid #fff; }
+
+.worker-info { margin-top: 30px; padding-top: 25px; border-top: 1px solid #1a1a1a; font-size: 10px; color: #888; text-align: center; }
+.worker-name { display: block; font-size: 14px; font-weight: 800; color: #fff; margin-top: 5px; margin-bottom: 15px;}
+.btn-logout { width: 100%; background: transparent; border: 1px solid #ff4444; color: #ff4444; padding: 10px; font-size: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
+.btn-logout:hover { background: #ff4444; color: #fff; }
+
+/* ================= CONTENT & TOPBAR ================= */
+.content-right { flex: 1; display: flex; flex-direction: column; gap: 25px; }
+
+.topbar { background: #050505; border: 1px solid #1a1a1a; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+.topbar-left { display: flex; gap: 15px; align-items: center; width: 60%; }
+.petelot-search { flex: 1; padding: 12px 15px; background: #000; border: 1px solid #333; color: #fff; font-size: 11px; outline: none; }
+.petelot-search:focus { border-color: #ffaa00; }
+.petelot-select { padding: 12px 15px; background: #000; border: 1px solid #333; color: #fff; font-size: 11px; outline: none; cursor: pointer; }
+
+/* ================= SECTIONS & GRID ================= */
+.section-title { font-size: 14px; letter-spacing: 3px; color: #fff; border-left: 3px solid #ffaa00; padding-left: 15px; margin-top: 10px; text-transform: uppercase; margin-bottom: 20px; }
+.orders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+
+/* ================= CARDS ================= */
+.card { background: #050505; border: 1px solid #1a1a1a; padding: 25px; transition: 0.3s; display: flex; flex-direction: column; }
+.card:hover { border-color: #333; }
+
+.card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a1a; padding-bottom: 15px; margin-bottom: 15px; }
+.card-id { font-size: 16px; font-weight: 800; font-family: monospace; color: #fff; }
+.st-tag { font-size: 9px; font-weight: 800; padding: 4px 8px; border: 1px solid; letter-spacing: 1px; text-transform: uppercase; }
+
+.card-info { margin-bottom: 15px; flex: 1; }
+.card-client { font-size: 11px; color: #888; font-weight: 700; margin-bottom: 8px; }
+.card-service { font-size: 10px; color: #ffaa00; font-weight: 800; letter-spacing: 1px; display: inline-block; background: rgba(255, 170, 0, 0.1); padding: 4px 8px; margin-bottom: 10px;}
+.card-desc { font-size: 11px; color: #ccc; line-height: 1.6; background: #000; padding: 12px; border: 1px solid #111; word-wrap: break-word; }
+
+.card-handler { font-size: 10px; color: #555; text-align: right; margin-bottom: 15px; font-weight: 800; letter-spacing: 1px; }
+
+/* ================= INPUTS IN CARD ================= */
+.card-controls { display: flex; flex-direction: column; gap: 12px; background: #0a0a0a; padding: 15px; border: 1px solid #1a1a1a; margin-bottom: 15px; }
+.control-group { display: flex; flex-direction: column; gap: 5px; }
+.control-label { font-size: 9px; font-weight: 800; color: #666; letter-spacing: 1px; }
+.card .petelot-select { padding: 10px; width: 100%; border-color: #1a1a1a; }
+.card .petelot-select:focus { border-color: #fff; }
+.file-input { font-size: 10px; color: #888; cursor: pointer; background: #000; padding: 8px; border: 1px dashed #333; }
+
+.bukti-img { max-width: 100%; height: 100px; object-fit: cover; border: 1px solid #333; cursor: zoom-in; margin-top: 5px; }
+.link-download { font-size: 10px; color: #00ff00; text-decoration: none; font-weight: 800; margin-top: 5px; display: inline-block; background: rgba(0, 255, 0, 0.1); padding: 5px 10px; border: 1px solid #00ff00; }
+.link-download:hover { background: #00ff00; color: #000; }
+
+/* ================= BUTTONS ================= */
+.btn-group { display: flex; gap: 10px; margin-top: auto; }
+.btn-action { flex: 1; padding: 12px; font-size: 10px; font-weight: 800; border: none; cursor: pointer; letter-spacing: 1px; transition: 0.3s; text-transform: uppercase; }
+.btn-take { background: #fff; color: #000; }
+.btn-take:hover { background: #ccc; }
+.btn-save { background: #333; color: #fff; }
+.btn-save:hover { background: #ffaa00; color: #000; }
+.btn-save:disabled { background: #111; color: #444; cursor: not-allowed; }
+
+@media (max-width: 992px) { 
+    .container-center { flex-direction: column; } 
+    .sidebar-center { width: 100%; position: relative; top: 0; } 
+    .topbar { flex-direction: column; gap: 15px; align-items: stretch; }
+    .topbar-left { width: 100%; }
+}
