@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Area - Petelot Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="dashboard-wrapper">
+        <div class="container-center">
+            
+            <aside class="sidebar-center">
+                <div class="sidebar-logo"><h1>PETELOT <span style="color: #ffaa00;">ADMIN</span></h1></div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active"><i class="fa-solid fa-list-check"></i> ALL ORDERS</a>
+                </nav>
+
+                <div class="worker-info">
+                    LOGGED IN AS:
+                    <span class="worker-name" id="workerName">ADMIN</span>
+                    <button onclick="logout()" class="btn-logout"><i class="fa-solid fa-power-off"></i> LOGOUT</button>
+                </div>
+            </aside>
+
+            <div class="content-right">
+                
+                <div class="topbar">
+                    <div class="topbar-left">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #555;"></i>
+                        <input type="text" id="searchBox" class="petelot-search" placeholder="Cari nomor HP / email client...">
+                    </div>
+                    <div class="topbar-right">
+                        <select id="sortSelect" class="petelot-select">
+                            <option value="new">TERBARU</option>
+                            <option value="old">TERLAMA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-title">BELUM SELESAI</h2>
+                    <div id="pendingOrders" class="orders-grid"></div>
+                </div>
+
+                <hr style="border-color: #1a1a1a; margin: 20px 0;">
+
+                <div>
+                    <h2 class="section-title" style="border-color: #00ff00;">SUDAH SELESAI</h2>
+                    <div id="doneOrders" class="orders-grid"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const APIKEY = "S1kr3tB4ng3t";
+        const worker = localStorage.getItem("worker") || "Admin";
+        document.getElementById("workerName").innerText = worker.toUpperCase();
+
+        let ORDERS = [];
+
+        document.getElementById("searchBox").addEventListener("input", applyFilter);
+        document.getElementById("sortSelect").addEventListener("change", applyFilter);
+
+        async function loadOrders() {
+            try {
+                const res = await fetch("/tugas", { headers: { "X-ADMIN-KEY": APIKEY } });
+                if (!res.ok) throw new Error("Gagal load orders");
+                ORDERS = await res.json();
+                applyFilter();
+            } catch(e) {
+                console.error(e);
+                // Komentar sementara untuk testing UI jika backend mati
+                // alert("Gagal load orders"); 
+            }
+        }
+
+        function initImageZoom() {
+            const overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = 0; overlay.style.left = 0;
+            overlay.style.width = "100%"; overlay.style.height = "100%";
+            overlay.style.background = "rgba(0,0,0,0.9)";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+            overlay.style.zIndex = 9999;
+            overlay.style.cursor = "zoom-out";
+            overlay.style.visibility = "hidden";
+
+            const img = document.createElement("img");
+            img.style.maxWidth = "90%"; img.style.maxHeight = "90%";
+            img.style.border = "1px solid #333";
+            overlay.appendChild(img);
+
+            overlay.onclick = () => overlay.style.visibility = "hidden";
+            document.body.appendChild(overlay);
+
+            document.querySelectorAll(".card img").forEach(i => {
+                i.style.cursor = "zoom-in";
+                i.onclick = () => {
+                    img.src = i.src;
+                    overlay.style.visibility = "visible";
+                }
+            });
+        }
+
+        function refreshImageZoom() {
+            setTimeout(initImageZoom, 100);
+        }
+
+        async function logout() {
+            try {
+                await fetch("/api/logout", { method: "POST" });
+            } catch (e) {
+                console.warn("Logout warning:", e);
+            } finally {
+                document.cookie = "ATMINSESS=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+                localStorage.removeItem("worker");
+                window.location.href = "/login/";
+            }
+        }
+
+        function applyFilter() {
+            let data = [...ORDERS];
+            const q = document.getElementById("searchBox").value.toLowerCase();
+            const sort = document.getElementById("sortSelect").value;
+
+            if (q) data = data.filter(o => (o.contact||"").toLowerCase().includes(q));
+
+            data.sort((a,b)=>{
+                const da = a.id.split("-")[1];
+                const db = b.id.split("-")[1];
+                return sort==="new" ? db.localeCompare(da) : da.localeCompare(db);
+            });
+
+            const done = data.filter(o => o.status === "done");
+            const pending = data.filter(o => o.status !== "done");
+
+            renderOrders(pending, "pendingOrders");
+            renderOrders(done, "doneOrders");
+            refreshImageZoom();
+        }
+
+        function renderOrders(data, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = "";
+
+            data.forEach(o=>{
+                const card = document.createElement("div");
+                card.className = "card";
+
+                // Penyesuaian warna status tag
+                let statusColor = "#ffaa00"; // default pending/proses
+                if(o.status === "done") statusColor = "#00ff00";
+                if(o.status === "cancel") statusColor = "#ff4444";
+                if(o.status === "baru") statusColor = "#fff";
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span class="card-id">${o.id}</span>
+                        <span class="st-tag" style="color: ${statusColor}; border-color: ${statusColor};">${o.status}</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-client"><i class="fa-regular fa-user"></i> ${o.name} | ${o.contact}</div>
+                        <div class="card-service">${o.service}</div>
+                        <div class="card-desc">${o.message}</div>
+                    </div>
+                    
+                    <div class="card-handler">HANDLER: <span style="color:#fff;">${o.handler ? o.handler.toUpperCase() : "FREE TICKET"}</span></div>
+
+                    <div class="card-controls">
+                        <div class="control-group">
+                            <label class="control-label">UBAH STATUS</label>
+                            <select class="status petelot-select">
+                                ${["baru","pending","proses","cancel","done"].map(s => `<option value="${s}" ${o.status===s?"selected":""}>${s.toUpperCase()}</option>`).join("")}
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">FILE HASIL (.ZIP)</label>
+                            <input type="file" class="filedone file-input">
+                            ${o.filepath ? `<a href="${o.filepath}" class="link-download" target="_blank"><i class="fa-solid fa-download"></i> DOWNLOAD FILE</a>` : ""}
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">BUKTI PEMBAYARAN</label>
+                            <input type="file" class="bukti file-input">
+                            ${o.bukti ? `<img src="${o.bukti}" class="bukti-img" alt="Bukti Pembayaran">` : ""}
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn-action btn-take take-order">TAKE ORDER</button>
+                        <button class="btn-action btn-save save"><i class="fa-solid fa-floppy-disk"></i> SIMPAN</button>
+                    </div>
+                `;
+
+                const takeBtn = card.querySelector(".take-order");
+                const saveBtn = card.querySelector(".save");
+                const filedone = card.querySelector(".filedone");
+                const bukti = card.querySelector(".bukti");
+                const statusSel = card.querySelector(".status");
+
+                if (o.handler && o.handler !== "") {
+                    takeBtn.style.display = "none";
+                }
+
+                takeBtn.onclick = async () => {
+                    try {
+                        await fetch("/tugas/" + o.id + "/take", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json", "X-ADMIN-KEY": APIKEY },
+                            body: JSON.stringify({ handler: worker })
+                        });
+                        loadOrders(); 
+                    } catch(e) {
+                        console.error("Take order gagal", e);
+                        alert("Gagal take order");
+                    }
+                };
+
+                const canEdit = !o.handler || o.handler === worker;
+                if (!canEdit) {
+                    saveBtn.disabled = true;
+                    filedone.disabled = true;
+                    bukti.disabled = true;
+                    statusSel.disabled = true;
+                }
+
+                saveBtn.onclick = async () => {
+                    if (!canEdit) return alert("Kamu tidak punya akses untuk edit order ini");
+
+                    let filepath = o.filepath || "";
+                    let buktiPath = o.bukti || "";
+
+                    if (filedone.files.length) {
+                        const fd = new FormData();
+                        fd.append("file", filedone.files[0]);
+                        try {
+                            const res = await fetch("/filedone/"+o.id, { method:"POST", body:fd });
+                            const data = await res.json();
+                            filepath = data.filepath;
+                        } catch(e){ console.error("Upload file hasil gagal", e); }
+                    }
+
+                    if (bukti.files.length) {
+                        const fd = new FormData();
+                        fd.append("file", bukti.files[0]);
+                        try {
+                            const res = await fetch("/buktipembayaran/"+o.id, { method:"POST", body:fd });
+                            const data = await res.json();
+                            buktiPath = data.filepath;
+                            statusSel.value = "proses";
+                        } catch(e){ console.error("Upload bukti gagal", e); }
+                    }
+
+                    try {
+                        await fetch("/tugas/"+o.id, {
+                            method:"PUT",
+                            headers: { "Content-Type":"application/json", "X-ADMIN-KEY":APIKEY },
+                            body: JSON.stringify({ status: statusSel.value, filepath: filepath, bukti: buktiPath })
+                        });
+                        loadOrders();
+                    } catch(e){ console.error("Update order gagal", e); }
+                };
+
+                container.appendChild(card);
+            });
+        }
+
+        // Simulasi Data untuk Testing UI jika backend belum jalan (Bisa dihapus nanti)
+        // ORDERS = [
+        //     { id: "PC-102", name: "Budi", contact: "081234", service: "Bot Discord", message: "Bot moderation", status: "pending", handler: "", filepath: "", bukti: "" },
+        //     { id: "PC-101", name: "Andi", contact: "089999", service: "Web Dev", message: "Landing page", status: "done", handler: "Admin", filepath: "#", bukti: "https://via.placeholder.com/150" }
+        // ];
+        // applyFilter();
+
+        loadOrders();
+    </script>
+</body>
+</html>
